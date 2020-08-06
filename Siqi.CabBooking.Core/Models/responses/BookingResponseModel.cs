@@ -20,6 +20,7 @@ namespace Siqi.CabBooking.Core.Models
         public string ContactNo { get; set; }
         public string Status { get; set; }
 
-        public PlaceResponseModel Places { get; set; }
+        public string StartPlace { get; set; }
+        public string ToPlace { get; set; }
     }
 }
