@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Siqi.CabBooking.Core.Entities;
 using Siqi.CabBooking.Core.Models;
+using Siqi.CabBooking.Core.Models.requests;
 using Siqi.CabBooking.Core.RepositoryInterfaces;
 using Siqi.CabBooking.Core.ServiceInterfaces;
 
@@ -22,5 +24,6 @@ namespace Siqi.CabBooking.Infrastructure.Services
             var response = cabs.Select(c => new CabResponseModel {Id = c.Id, Name = c.CabTypeName});
             return response;
         }
+
     }
 }
