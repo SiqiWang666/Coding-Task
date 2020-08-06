@@ -5,8 +5,8 @@ This is a coding task of cabs booking website built with Angular and ASP.NET web
 ### Overview
 
 The landing page is all the available cabs.
-![cabs](../../../Desktop/cabs.png)
+![cabs](./cabs.png)
 
 Customer call click the cab to check the booking history of this cab.
 
-![bookings](../../../Desktop/bookings.png)
+![bookings](./bookings.png)
