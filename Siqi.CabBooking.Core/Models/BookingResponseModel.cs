@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+using Siqi.CabBooking.Core.Entities;
 
-namespace Siqi.CabBooking.Core.Entities
+namespace Siqi.CabBooking.Core.Models
 {
-    public class Booking
+    public class BookingResponseModel
     {
         public int Id { get; set; }
         public string Email { get; set; }
@@ -14,12 +16,10 @@ namespace Siqi.CabBooking.Core.Entities
         public string Landmark { get; set; }
         public DateTime? PickupDate { get; set; }
         public DateTime? PickupTime { get; set; }
-        public int? CabTypeId { get; set; }
+        
         public string ContactNo { get; set; }
         public string Status { get; set; }
-        // public int TripId { get; set; }
 
-        public CabType Cab { get; set; }
-        // public Trip StartEndPlace { get; set; }
+        public PlaceResponseModel Places { get; set; }
     }
 }

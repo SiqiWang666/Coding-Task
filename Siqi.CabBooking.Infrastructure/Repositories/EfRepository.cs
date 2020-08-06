@@ -18,35 +18,40 @@ namespace Siqi.CabBooking.Infrastructure.Repositories
             _cabBookingDbContext = cabBookingDbContext;
         }
 
-        public async Task<IEnumerable<T>> ListAllAsync()
+        public virtual async Task<IEnumerable<T>> ListAllAsync()
         {
             return await _cabBookingDbContext.Set<T>().ToListAsync();
         }
 
-        public async Task<IEnumerable<T>> FilterAllAsync(Expression<Func<T, bool>> filter)
+        public virtual async Task<IEnumerable<T>> FilterAllAsync(Expression<Func<T, bool>> filter)
         {
             return await _cabBookingDbContext.Set<T>().Where(filter).ToListAsync();
         }
 
-        public async Task<T> AddAsync(T entity)
+        public virtual async Task<T> AddAsync(T entity)
         {
             await _cabBookingDbContext.Set<T>().AddAsync(entity);
             await _cabBookingDbContext.SaveChangesAsync();
             return entity;
         }
 
-        public async Task<T> UpdateAsync(T entity)
+        public virtual async Task<T> UpdateAsync(T entity)
         {
             _cabBookingDbContext.Entry(entity).State = EntityState.Modified;
             await _cabBookingDbContext.SaveChangesAsync();
             return entity;
         }
 
-        public async Task<T> DeleteAsync(T entity)
+        public virtual async Task<T> DeleteAsync(T entity)
         {
             _cabBookingDbContext.Set<T>().Remove(entity);
             await _cabBookingDbContext.SaveChangesAsync();
             return entity;
+        }
+
+        public async Task<T> GetOneById(int id)
+        {
+            return await _cabBookingDbContext.Set<T>().FindAsync(id);
         }
     }
 }

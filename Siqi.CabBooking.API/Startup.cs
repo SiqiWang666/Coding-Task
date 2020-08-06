@@ -39,6 +39,7 @@ namespace Siqi.CabBooking.API
             services.AddScoped<ICabTypeRepository, CabTypeRepository>();
             services.AddScoped<IPlaceRepository, PlaceRepository>();
             services.AddScoped<ICabService, CabService>();
+            services.AddScoped<IBookingService, BookingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
