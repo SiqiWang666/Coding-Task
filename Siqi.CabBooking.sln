@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siqi.CabBooking.API", "Siqi.CabBooking.API\Siqi.CabBooking.API.csproj", "{5E7A7284-44A3-49AD-AE15-BA96CFB39433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siqi.CabBooking.Core", "Siqi.CabBooking.Core\Siqi.CabBooking.Core.csproj", "{AD7827BB-37D3-427A-8784-A7A19F6CE723}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siqi.CabBooking.Infrastructure", "Siqi.CabBooking.Infrastructure\Siqi.CabBooking.Infrastructure.csproj", "{D541C4C5-C16A-4B3D-B414-985AB97E78C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E7A7284-44A3-49AD-AE15-BA96CFB39433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7A7284-44A3-49AD-AE15-BA96CFB39433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7A7284-44A3-49AD-AE15-BA96CFB39433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7A7284-44A3-49AD-AE15-BA96CFB39433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7827BB-37D3-427A-8784-A7A19F6CE723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7827BB-37D3-427A-8784-A7A19F6CE723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7827BB-37D3-427A-8784-A7A19F6CE723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7827BB-37D3-427A-8784-A7A19F6CE723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D541C4C5-C16A-4B3D-B414-985AB97E78C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D541C4C5-C16A-4B3D-B414-985AB97E78C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D541C4C5-C16A-4B3D-B414-985AB97E78C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D541C4C5-C16A-4B3D-B414-985AB97E78C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
