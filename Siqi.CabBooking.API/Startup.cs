@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Siqi.CabBooking.Core.RepositoryInterfaces;
 using Siqi.CabBooking.Infrastructure.Data;
+using Siqi.CabBooking.Infrastructure.Repositories;
 
 namespace Siqi.CabBooking.API
 {
@@ -30,6 +32,10 @@ namespace Siqi.CabBooking.API
             services.AddControllers();
             services.AddDbContext<CabBookingDbContext>(options =>
                 options.UseSqlServer(connectionString: Configuration.GetConnectionString("CabBookingDbConnection")));
+            services.AddScoped<IBookingRepository, BookingRepository>();
+            services.AddScoped<IBookingHistoryRepository, BookingHistoryRespository>();
+            services.AddScoped<ICabTypeRepository, CabTypeRepository>();
+            services.AddScoped<IPlaceRepository, PlaceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,4 +8,8 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ServiceInterfaces" />
+    </ItemGroup>
+
 </Project>
