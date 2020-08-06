@@ -59,8 +59,7 @@ namespace Siqi.CabBooking.Infrastructure.Data
                 //     .HasForeignKey(b => b.FromPlaceId);
                 // modelBuilder.HasOne(b => b.ToPlace).WithMany(p => p.ToBookings)
                 //     .HasForeignKey(b => b.ToPlaceId).OnDelete(DeleteBehavior.Restrict);
-                // modelBuilder.HasOne(b => b.Cab).WithMany(c => c.Bookings).HasForeignKey(b => b.CabTypeId);
-
+                modelBuilder.HasOne(b => b.Cab).WithMany(c => c.Bookings).HasForeignKey(b => b.CabTypeId);
             });
         }
     }

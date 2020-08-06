@@ -17,5 +17,7 @@ namespace Siqi.CabBooking.Core.Entities
         public int? CabTypeId { get; set; }
         public string ContactNo { get; set; }
         public string Status { get; set; }
+
+        public CabType Cab { get; set; }
     }
 }
