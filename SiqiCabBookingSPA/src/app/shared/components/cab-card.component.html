@@ -1,0 +1,22 @@
+<div class="card mb-4 mr-3 shadow bg-light">
+  <img
+    class="card-img-top"
+    src="/images/pathToYourImage.png"
+    [alt]="cab.name"
+  />
+  <div class="card-body">
+    <h4 class="card-title">
+      <i class="fas fa-taxi"></i> &nbsp; Cab Type:
+      {{ cab.name }}
+    </h4>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <i class="far fa-id-card"></i> &nbsp; Cab Number: {{ cab.id }}
+    </h6>
+    <p class="card-text text-muted">
+      Some Description about the cab
+    </p>
+    <a [routerLink]="['cab/bookings', cab.id]" class="btn btn-info"
+      >Check all the bookings</a
+    >
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Booking date</th>
+      <th>Booking time</th>
+      <th>Pickup date</th>
+      <th>Pickup time</th>
+      <th>Email</th>
+      <th>Contact Number</th>
+      <th>Place Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of bookings">
+      <td *ngIf="booking.bookingDate != null">
+        {{ booking.bookingDate | date }}
+      </td>
+      <td>{{ booking.bookingTime }}</td>
+      <td>{{ booking.pickupDate }}</td>
+      <td>{{ booking.pickupTime }}</td>
+      <td>{{ booking.email }}</td>
+      <td>{{ booking.contactNo }}</td>
+      <td>{{ booking.places }}</td>
+    </tr>
+  </tbody>
+</table>
