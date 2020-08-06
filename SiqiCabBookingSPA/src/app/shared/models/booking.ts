@@ -1,3 +1,5 @@
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
+
 export interface Booking {
   id: number;
   email: string;
@@ -11,5 +13,7 @@ export interface Booking {
   pickupTime?: Date;
   contactNo?: string;
   status?: string;
-  places?: string;
+
+  startPlace: string;
+  toPlace: string;
 }

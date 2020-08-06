@@ -7,7 +7,8 @@
       <th>Pickup time</th>
       <th>Email</th>
       <th>Contact Number</th>
-      <th>Place Info</th>
+      <th>Start Place</th>
+      <th>Destination</th>
     </tr>
   </thead>
   <tbody>
@@ -15,12 +16,13 @@
       <td *ngIf="booking.bookingDate != null">
         {{ booking.bookingDate | date }}
       </td>
-      <td>{{ booking.bookingTime }}</td>
-      <td>{{ booking.pickupDate }}</td>
-      <td>{{ booking.pickupTime }}</td>
+      <td>{{ booking.bookingTime | date: "shortTime" }}</td>
+      <td>{{ booking.pickupDate | date }}</td>
+      <td>{{ booking.pickupTime | date: "shortTime" }}</td>
       <td>{{ booking.email }}</td>
       <td>{{ booking.contactNo }}</td>
-      <td>{{ booking.places }}</td>
+      <td>{{ booking.startPlace }}</td>
+      <td>{{ booking.toPlace }}</td>
     </tr>
   </tbody>
 </table>
