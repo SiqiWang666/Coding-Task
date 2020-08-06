@@ -20,7 +20,7 @@ namespace Siqi.CabBooking.Infrastructure.Data
             {
                 modelBuilder.ToTable("Place");
                 modelBuilder.HasKey(p => p.Id);
-                modelBuilder.Property(p => p.PlaceName).HasMaxLength(30);
+                modelBuilder.Property(p => p.PlaceName).HasMaxLength(100);
             });
 
             modelBuilder.Entity<CabType>(modelBuilder =>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Siqi.CabBooking.Infrastructure.Data;
 
 namespace Siqi.CabBooking.Infrastructure.Migrations
 {
     [DbContext(typeof(CabBookingDbContext))]
-    partial class CabBookingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200806185448_IncreasePlaceSize")]
+    partial class IncreasePlaceSize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

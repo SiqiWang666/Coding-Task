@@ -20,7 +20,7 @@
     "Siqi.CabBooking.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "api/cab",
       "applicationUrl": "https://localhost:8999",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
