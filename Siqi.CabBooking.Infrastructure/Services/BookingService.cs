@@ -36,12 +36,12 @@ namespace Siqi.CabBooking.Infrastructure.Services
                 ContactNo = b.ContactNo,
                 Status = b.Status
             });
-            foreach (var booking in bookings)
-            {
-                var places = await _placeRepository.GetPlaceInfo(booking.FromPlaceId, booking.ToPlaceId);
-                booking.Places = places;
-
-            }
+            // foreach (var booking in bookings)
+            // {
+            //     var places = await _placeRepository.GetPlaceInfo(booking.FromPlaceId, booking.ToPlaceId);
+            //     booking.Places = places;
+            //
+            // }
             return bookings;
         }
     }

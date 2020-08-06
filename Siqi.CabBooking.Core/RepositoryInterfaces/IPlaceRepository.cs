@@ -6,6 +6,6 @@ namespace Siqi.CabBooking.Core.RepositoryInterfaces
 {
     public interface IPlaceRepository : IAsyncRepository<Place>
     {
-        Task<PlaceResponseModel> GetPlaceInfo(int start, int end);
+        
     }
 }
