@@ -38,12 +38,13 @@ namespace Siqi.CabBooking.Infrastructure.Data
                 modelBuilder.Property(bh => bh.Charge).HasColumnType("DECIMAL(5, 2)");
                 modelBuilder.Property(bh => bh.PickupAddress).HasMaxLength(200);
                 modelBuilder.Property(bh => bh.ContactNo).HasMaxLength(25);
+                modelBuilder.Property(bh => bh.Charge).HasColumnType("DECIMAL(5,2)").HasDefaultValue(19.99m);
 
-                // modelBuilder.HasOne(bh => bh.FromPlace).WithMany(p => p.FromBookingHistories)
-                //     .HasForeignKey(bh => bh.FromPlaceId).IsRequired();
-                // modelBuilder.HasOne(bh => bh.ToPlace).WithMany(p => p.ToBookingHistories)
-                //     .HasForeignKey(bh => bh.ToPlaceId).IsRequired().OnDelete(DeleteBehavior.Restrict);
-                // modelBuilder.HasOne(bh => bh.Cab).WithMany(c => c.BookingHistories).HasForeignKey(bh => bh.CabTypeId);
+                modelBuilder.HasOne(bh => bh.FromPlace).WithMany()
+                    .HasForeignKey(bh => bh.FromPlaceId).IsRequired().OnDelete(DeleteBehavior.Restrict);
+                modelBuilder.HasOne(bh => bh.ToPlace).WithMany()
+                    .HasForeignKey(bh => bh.ToPlaceId).IsRequired().OnDelete(DeleteBehavior.Restrict);
+                modelBuilder.HasOne(bh => bh.Cab).WithMany(c => c.BookingHistories).HasForeignKey(bh => bh.CabTypeId);
 
             });
 
@@ -55,10 +56,10 @@ namespace Siqi.CabBooking.Infrastructure.Data
                 modelBuilder.Property(b => b.PickupAddress).HasMaxLength(200);
                 modelBuilder.Property(b => b.ContactNo).HasMaxLength(25);
 
-                // modelBuilder.HasOne(b => b.FromPlace).WithMany(p => p.FromBookings)
-                //     .HasForeignKey(b => b.FromPlaceId);
-                // modelBuilder.HasOne(b => b.ToPlace).WithMany(p => p.ToBookings)
-                //     .HasForeignKey(b => b.ToPlaceId).OnDelete(DeleteBehavior.Restrict);
+                modelBuilder.HasOne(b => b.FromPlace).WithMany()
+                    .HasForeignKey(b => b.FromPlaceId).OnDelete(DeleteBehavior.Restrict);
+                modelBuilder.HasOne(b => b.ToPlace).WithMany()
+                    .HasForeignKey(b => b.ToPlaceId).OnDelete(DeleteBehavior.Restrict);
                 modelBuilder.HasOne(b => b.Cab).WithMany(c => c.Bookings).HasForeignKey(b => b.CabTypeId);
             });
         }

@@ -20,5 +20,9 @@ namespace Siqi.CabBooking.Core.Entities
         public string CompTime { get; set; }
         public Decimal? Charge { get; set; }
         public string Feedback { get; set; }
+        
+        public CabType Cab { get; set; }
+        public Place FromPlace { get; set; }
+        public Place ToPlace { get; set; }
     }
 }

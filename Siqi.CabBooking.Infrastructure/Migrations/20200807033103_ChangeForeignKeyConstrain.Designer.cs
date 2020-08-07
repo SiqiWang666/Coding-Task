@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Siqi.CabBooking.Infrastructure.Data;
 
 namespace Siqi.CabBooking.Infrastructure.Migrations
 {
     [DbContext(typeof(CabBookingDbContext))]
-    partial class CabBookingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200807033103_ChangeForeignKeyConstrain")]
+    partial class ChangeForeignKeyConstrain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,7 +114,6 @@ namespace Siqi.CabBooking.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("FromPlaceId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Landmark")
@@ -132,16 +133,9 @@ namespace Siqi.CabBooking.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ToPlaceId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CabTypeId");
-
-                    b.HasIndex("FromPlaceId");
-
-                    b.HasIndex("ToPlaceId");
 
                     b.ToTable("BookingHistory");
                 });
@@ -182,25 +176,6 @@ namespace Siqi.CabBooking.Infrastructure.Migrations
                 {
                     b.HasOne("Siqi.CabBooking.Core.Entities.CabType", "Cab")
                         .WithMany("Bookings")
-                        .HasForeignKey("CabTypeId");
-
-                    b.HasOne("Siqi.CabBooking.Core.Entities.Place", "FromPlace")
-                        .WithMany()
-                        .HasForeignKey("FromPlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Siqi.CabBooking.Core.Entities.Place", "ToPlace")
-                        .WithMany()
-                        .HasForeignKey("ToPlaceId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Siqi.CabBooking.Core.Entities.BookingHistory", b =>
-                {
-                    b.HasOne("Siqi.CabBooking.Core.Entities.CabType", "Cab")
-                        .WithMany("BookingHistories")
                         .HasForeignKey("CabTypeId");
 
                     b.HasOne("Siqi.CabBooking.Core.Entities.Place", "FromPlace")

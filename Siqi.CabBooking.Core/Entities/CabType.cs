@@ -8,5 +8,6 @@ namespace Siqi.CabBooking.Core.Entities
         public string CabTypeName { get; set; }
 
         public IEnumerable<Booking> Bookings { get; set; }
+        public IEnumerable<BookingHistory> BookingHistories { get; set; }
     }
 }
