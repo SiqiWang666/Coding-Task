@@ -34,15 +34,10 @@ namespace Siqi.CabBooking.Infrastructure.Services
                 PickupDate = b.PickupDate,
                 PickupTime = b.PickupTime,
                 ContactNo = b.ContactNo,
-                Status = b.Status
-            }).ToList();
-            foreach (var booking in bookings)
-            {
-                var start = await _placeRepository.GetOneById(booking.FromPlaceId);
-                var end = await _placeRepository.GetOneById(booking.ToPlaceId);
-                booking.StartPlace = start.PlaceName;
-                booking.ToPlace = end.PlaceName;
-            }
+                Status = b.Status,
+                StartPlace = b.FromPlace.PlaceName,
+                ToPlace = b.ToPlace.PlaceName
+            });
             return bookings;
         }
     }
